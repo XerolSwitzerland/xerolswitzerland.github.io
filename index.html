@@ -16,10 +16,12 @@ body {
     overflow-x: hidden;
 
     .logo-wrapper {
-    height: 100vh;
     display: flex;
+    flex-direction: column; /* 🔥 DAS IST DER FIX */
     justify-content: center;
     align-items: center;
+    height: 100vh;
+}
 }
 
 .logo-wrapper img {
