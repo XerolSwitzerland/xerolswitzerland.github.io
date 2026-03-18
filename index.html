@@ -13,26 +13,21 @@
   font-family: Arial, sans-serif;
 }
 
-/* INTRO */
+/* INTRO FIX */
 #intro {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
   background: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 9999;
 }
 
 #intro img {
-  width: 200px;
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* WICHTIG → kein Rand mehr */
 }
 
 /* NAVBAR */
@@ -85,9 +80,9 @@
 
 <body>
 
-<!-- INTRO -->
+<!-- INTRO (JETZT VOLLBILD) -->
 <div id="intro">
-  <img src="IMG_1751.jpeg" alt="Logo">
+  <img src="IMG_1751.jpeg" alt="Intro">
 </div>
 
 <!-- NAVBAR -->
@@ -106,10 +101,14 @@
 </div>
 
 <script>
-// Intro nach 3 Sekunden weg
+// Intro verschwindet smooth
 setTimeout(() => {
-  document.getElementById("intro").style.display = "none";
-}, 3000);
+  document.getElementById("intro").style.opacity = "0";
+  document.getElementById("intro").style.transition = "1s";
+  setTimeout(() => {
+    document.getElementById("intro").style.display = "none";
+  }, 1000);
+}, 2500);
 </script>
 
 </body>
