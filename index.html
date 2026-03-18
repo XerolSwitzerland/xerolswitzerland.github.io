@@ -62,16 +62,21 @@ body {
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Willkommen</h1>
+  <h1>Willkommen bei Xerol</h1>
 </section>
 
 <script>
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
   setTimeout(function() {
-    var intro = document.getElementById("intro");
-    intro.style.display = "none";
-  }, 2000); // 2 Sekunden
-};
+    const intro = document.getElementById("intro");
+    intro.style.opacity = "0";
+    
+    setTimeout(function() {
+      intro.remove();
+    }, 500);
+    
+  }, 2000);
+});
 </script>
 
 </body>
