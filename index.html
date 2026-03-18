@@ -14,6 +14,23 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
+
+    .logo-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-wrapper img {
+    width: 240px;
+    border-radius: 6px;
+
+    box-shadow:
+        0 0 60px rgba(255,255,255,0.2),
+        0 0 120px rgba(255,255,255,0.1),
+        0 0 200px rgba(255,255,255,0.05);
+}
 }
 
 /* INTRO (LOGO SCREEN) */
@@ -123,11 +140,8 @@ header {
 </header>
 
 <!-- HERO -->
-<div class="hero">
-    <img src="IMG_1751.jpeg" class="fade" style="width:200px;">
-    <h1 class="fade">Xerol Swiss</h1>
-    <p class="fade">Wo Präzision auf Kraft trifft. Schweizer Luxus neu definiert.</p>
-    <button class="btn fade" onclick="goNext()">Jetzt entdecken</button>
+<div class="logo-wrapper">
+    <img src="IMG_1751.jpeg">
 </div>
 
 <!-- NEXT SECTION -->
