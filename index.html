@@ -7,20 +7,7 @@
 
 <style>
 html { scroll-behavior: smooth; }
-.logo-box img {
-  width: 220px;
-  border-radius: 10px;
-  animation: glowPulse 2s infinite alternate;
-}
 
-@keyframes glowPulse {
-  from {
-    box-shadow: 0 0 40px rgba(255,255,255,0.3);
-  }
-  to {
-    box-shadow: 0 0 80px rgba(255,255,255,0.6);
-  }
-}
 body {
     margin: 0;
     background: black;
@@ -41,13 +28,10 @@ body {
     z-index: 9999;
     animation: fadeOut 2s ease 2s forwards;
 }
-     #intro img {
-  width: 65%;
-  max-width: 240px;
-  height: auto;
-  object-fit: contain;
-}
-">
+
+#intro img {
+    width: 200px;
+    animation: glow 2s infinite alternate;
 }
 
 /* HEADER */
@@ -134,22 +118,21 @@ header {
 </div>
 
 <!-- HEADER -->
-
+<header>
+    <img src="IMG_1751.jpeg" class="logo">
+</header>
 
 <!-- HERO -->
-<div class="logo-wrapper">
-  <img src="IMG_1751.jpeg">
-</div> class="fade" style="width:220px; height:auto; object-fit:contain; display:block;">
-   <h1 class="fade" style="max-width:320px; font-size:28px; line-height:1.4;">
-Inspiriert von Schweizer Präzision — geschaffen für unverwechselbare Momente.
-</h1>
+<div class="hero">
+    <img src="IMG_1751.jpeg" class="fade" style="width:200px;">
+    <h1 class="fade">Xerol Swiss</h1>
     <p class="fade">Wo Präzision auf Kraft trifft. Schweizer Luxus neu definiert.</p>
     <button class="btn fade" onclick="goNext()">Jetzt entdecken</button>
 </div>
 
 <!-- NEXT SECTION -->
 <div class="section" id="next">
-    <h2>Luxus neu definiert – Bald verfügbar 💎 </h2>
+    <h2>Luxury Parfums Coming Soon 💎</h2>
 </div>
 
 <script>
