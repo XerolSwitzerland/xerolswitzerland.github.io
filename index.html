@@ -9,7 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
 
 <style>
-  html, body {
+
+/* FIX */
+html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -28,7 +30,6 @@ body {
   color: white;
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
-  margin: 0;
 }
 
 /* 🔥 INTRO */
@@ -55,10 +56,10 @@ body {
   height: 100vh;
   background-image: url("IMG_1817.jpeg");
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  justify-content: flex-end; /* Text nach rechts */
+  justify-content: flex-end;
   align-items: center;
   padding-right: 10%;
   text-align: right;
@@ -71,7 +72,6 @@ body {
   inset: 0;
   background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
 }
-
 
 .hero-content {
   position: relative;
@@ -131,16 +131,11 @@ body {
 
 <!-- 🔥 HERO -->
 <section class="hero">
-
-  <img src="IMG_1817.jpeg" class="hero-img">
-
   <div class="hero-content">
     <div class="headline">Pure Eleganz.</div>
     <div class="subtext">Ein Duft. Ein Statement.</div>
     <a href="#next" class="btn">JETZT ENTDECKEN</a>
   </div>
-
-</section>
 </section>
 
 <!-- 🔥 NEXT SECTION -->
