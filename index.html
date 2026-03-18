@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xerol Switzerland</title>
+<title>Xerol</title>
 
 <style>
 body {
@@ -19,50 +19,35 @@ body {
     top: 0;
     width: 100%;
     height: 80px;
-    background: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    box-sizing: border-box;
+    background: #e9e9e9;
 }
 
-/* LINKES LOGO */
+/* LOGO LINKS */
 .logo-left {
-    height: 40px;
-    width: auto;
-    object-fit: contain;
-    transform: translateY(0); /* gerade */
-    filter: brightness(0); /* schwarz machen */
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 35px;
+    filter: brightness(0); /* gleiche Farbe */
 }
 
-/* RECHTE TASCHE */
+/* TASCHE RECHTS */
 .bag-right {
-    height: 40px;
-    width: auto;
-    object-fit: contain;
-    transform: translateY(0); /* gleiche Höhe */
-    filter: brightness(0); /* gleiche Farbe wie links */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 35px;
+    filter: brightness(0); /* gleiche Farbe */
 }
 
-/* HERO */
+/* HERO (INTRO) */
 .hero {
     margin-top: 80px;
     height: 100vh;
-    background: url('DEIN-PARFUM-BILD.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* GROSSES LOGO */
-.main-logo {
-    width: 300px;
-    max-width: 80%;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-    transform: translateY(0); /* gerade */
+    background: url("14A25A66-8A51-49FD-A812-AB9F9BE3DAC3.png") center/contain no-repeat;
+    background-color: black;
 }
 </style>
 </head>
@@ -76,9 +61,7 @@ body {
 </div>
 
 <!-- HERO -->
-<div class="hero">
-    <img src="14A25A66-8A51-49FD-A812-AB9F9BE3DAC3.png" class="main-logo">
-</div>
+<div class="hero"></div>
 
 </body>
 </html>
