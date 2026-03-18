@@ -3,116 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xerol Switzerland</title>
+<title>Xerol Swiss – Luxury Parfum</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
-/* INTRO (JETZT RICHTIG) */
-#intro{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100vh;
-  background:black;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
+/* TOP BAR */
+.topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 10000;
 }
 
-#intro img{
-  max-width:90%;
-  max-height:90vh;
-  width:auto;
-  height:auto;
-  object-fit:contain; /* KEIN ZOOM */
+.top-logo {
+    height: 30px;
 }
 
-/* NAVBAR */
-.navbar{
-  position:fixed;
-  top:0;
-  width:100%;
-  height:70px;
-  background:white;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 20px;
-  z-index:1000;
+.bag img {
+    width: 28px;
 }
 
-.navbar img{
-  height:30px;
+/* INTRO (LOGO SCREEN) */
+#intro {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 1.5s ease 1.5s forwards;
+}
+
+#intro img {
+    width: 260px;
+    animation: glow 2s infinite alternate;
 }
 
 /* HERO */
-.hero{
-  height:100vh;
-  background:url('CC91528A-789B-4124-9790-82C0DB69E60B.png') no-repeat center center/cover;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  padding-top:70px;
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero-content h1{
-  font-size:40px;
-  margin-bottom:10px;
+/* LOGO HAUPT (WICHTIG FIX) */
+.hero img {
+    width: 280px;
+    max-width: 80%;
+    filter: drop-shadow(0 0 40px rgba(255,255,255,0.4));
 }
 
-.hero-content p{
-  margin-bottom:20px;
+/* TEXT (optional später) */
+.hero-content {
+    text-align: center;
 }
 
-.btn{
-  padding:12px 30px;
-  border:1px solid gold;
-  color:white;
-  text-decoration:none;
+/* BUTTON */
+.btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+}
+
+/* SECTION */
+.section {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ANIMATION */
+@keyframes glow {
+    from { filter: drop-shadow(0 0 10px white); }
+    to { filter: drop-shadow(0 0 35px white); }
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- INTRO -->
-<div id="intro">
-  <img src="IMG_1751.jpeg" alt="Intro">
-</div>
-
-<!-- NAVBAR -->
-<div class="navbar">
-  <img src="IMG_1751.jpeg" alt="Logo">
-  <img src="42543725-B185-48B2-A22E-0B5BA6D9F2A3.png" alt="Bag">
-</div>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-content">
-    <h1>Pure Eleganz.</h1>
-    <p>Ein Duft. Ein Statement.</p>
-    <a href="#" class="btn">JETZT ENTDECKEN</a>
+<!-- TOP BAR -->
+<div class="topbar">
+  <img src="IMG_1751.jpeg" class="top-logo">
+  <div class="bag">
+    <img src="42543725-B185-48B2-A22E-0B5BA6D9F2A3.png">
   </div>
 </div>
 
+<!-- INTRO -->
+<div id="intro">
+    <img src="IMG_1751.jpeg">
+</div>
+
+<!-- HERO (JETZT RICHTIG WIE DEIN WUNSCH) -->
+<div class="hero">
+    <img src="IMG_1751.jpeg">
+</div>
+
+<!-- NEXT SECTION -->
+<div class="section" id="next">
+    <h2>Luxus neu definiert – Bald verfügbar 💎</h2>
+</div>
+
 <script>
-setTimeout(()=>{
-  document.getElementById("intro").style.opacity="0";
-  document.getElementById("intro").style.transition="1s";
-  setTimeout(()=>{
-    document.getElementById("intro").style.display="none";
-  },1000);
-},2500);
+function goNext() {
+    document.getElementById("next").scrollIntoView();
+}
 </script>
 
 </body>
