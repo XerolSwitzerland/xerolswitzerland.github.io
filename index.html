@@ -28,7 +28,7 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* 🔥 INTRO (LOGO FULLSCREEN) */
+/* 🔥 INTRO */
 #intro {
   position: fixed;
   inset: 0;
@@ -37,16 +37,20 @@ body {
   overflow: hidden;
 }
 
+/* 💥 FIXED LOGO (ZOOM) */
 .intro-logo {
-  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2.2);
   height: 100%;
-  object-fit: cover;
+  width: auto;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
-  background-image: url("CC91528A-789B-4124-9790-82C0DB69E60B.png");
+  background-image: url("IMG_1817.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -117,7 +121,7 @@ body {
 
 <!-- 🔥 INTRO -->
 <div id="intro">
-  <img src="CC91528A-789B-4124-9790-82C0DB69E60B.png" class="intro-logo">
+  <img src="IMG_1751.jpeg" class="intro-logo">
 </div>
 
 <!-- 🔥 HERO -->
