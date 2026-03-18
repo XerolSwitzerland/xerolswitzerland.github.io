@@ -6,25 +6,27 @@
 
 <title>Xerol Switzerland</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
 
 <style>
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BODY */
 body {
   background: black;
   color: white;
   font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
 }
 
-/* 🔥 INTRO SCREEN */
+/* 🔥 INTRO */
 #intro {
-  #intro {
   position: fixed;
   inset: 0;
   background: black;
@@ -32,52 +34,22 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-}
-
-/* 👇 HIER UNTEN */
-.brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  letter-spacing: 3px;
-}
-
-.brand span {
-  display: block;
-  font-size: 14px;
-  letter-spacing: 4px;
-  margin-top: 5px;
-  color: #ccc;
-}
+  transition: opacity 0.6s ease;
 }
 
 .intro-logo {
-  width: 260px;
-  filter: drop-shadow(0 0 60px rgba(255,255,255,0.6))
-          drop-shadow(0 0 120px rgba(255,255,255,0.3));
+  width: 180px;
+  animation: fadeIn 1.5s ease;
+  box-shadow: 0 0 80px rgba(255,255,255,0.25);
 }
 
-.logo-box {
-  padding: 60px;
-  box-shadow: 0 0 60px rgba(255,255,255,0.3);
-  animation: glow 2s infinite alternate;
-}
-
-.logo-box img {
-  width: 200px;
-}
-
-@keyframes glow {
-  from { box-shadow: 0 0 20px rgba(255,255,255,0.2); }
-  to { box-shadow: 0 0 80px rgba(255,255,255,0.6); }
-}
-
-/* 🔥 HERO */
+/* HERO */
 .hero {
   height: 100vh;
-  background: url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539') no-repeat center/cover;
+  background: url('https://images.unsplash.com/photo-1585386959984-a4155224a1ad?q=80&w=1200') center/cover no-repeat;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
   position: relative;
 }
@@ -86,7 +58,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.5);
 }
 
 .hero-content {
@@ -105,20 +77,34 @@ body {
   margin-bottom: 40px;
 }
 
-/* BUTTON */
 .btn {
+  padding: 15px 30px;
   border: 1px solid #C5A46D;
-  color: #C5A46D;
-  padding: 12px 28px;
   text-decoration: none;
+  color: white;
   letter-spacing: 2px;
-  text-transform: uppercase;
   transition: 0.3s;
 }
 
 .btn:hover {
   background: #C5A46D;
   color: black;
+}
+
+/* NEXT SECTION */
+.next {
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 </style>
@@ -128,39 +114,33 @@ body {
 
 <!-- 🔥 INTRO -->
 <div id="intro">
-  <img src="IMG_1751.jpeg" class="intro-logo" alt="logo">
+  <img src="IMG_1751.jpeg" class="intro-logo">
 </div>
 
-<!-- 🔥 WEBSITE -->
+<!-- 🔥 HERO -->
 <section class="hero">
   <div class="hero-content">
-
-  <div class="brand">
-    XEROL
-    <span>switzerland</span>
-  </div>
-
-  <div class="headline">Pure Eleganz.</div>
-  <div class="subtext">Ein Duft. Ein Statement.</div>
-  <a href="#" class="btn">Jetzt entdecken</a>
-
-</div>
+    <div class="headline">Pure Eleganz.</div>
     <div class="subtext">Ein Duft. Ein Statement.</div>
-    <a href="#" class="btn">Jetzt entdecken</a>
+    <a href="#next" class="btn">JETZT ENTDECKEN</a>
   </div>
 </section>
 
+<!-- 🔥 NEXT SECTION -->
+<section id="next" class="next">
+  Willkommen bei Xerol Switzerland ✨
+</section>
+
+<!-- 🔥 SCRIPT -->
 <script>
-  // 🔥 Intro verschwindet nach 2.5 Sekunden
+setTimeout(() => {
+  const intro = document.getElementById("intro");
+  intro.style.opacity = "0";
+
   setTimeout(() => {
-    const intro = document.getElementById("intro");
-    intro.style.opacity = "0";
-
-    setTimeout(() => {
-      intro.style.display = "none";
-    }, 1000);
-
-  }, 2500);
+    intro.style.display = "none";
+  }, 600);
+}, 2500);
 </script>
 
 </body>
