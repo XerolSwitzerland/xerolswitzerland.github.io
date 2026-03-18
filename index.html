@@ -10,9 +10,10 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
+  font-family:Arial, sans-serif;
 }
 
-/* INTRO */
+/* INTRO (JETZT RICHTIG) */
 #intro{
   position:fixed;
   top:0;
@@ -26,18 +27,12 @@
   z-index:9999;
 }
 
-/* DAS IST DER FIX → genau wie dein Bild */
 #intro img{
-  width:70%;          /* kleiner wie dein Screenshot */
-  max-width:320px;    /* begrenzt */
+  max-width:90%;
+  max-height:90vh;
+  width:auto;
   height:auto;
-  display:block;
-}
-
-/* HERO */
-.hero{
-  height:100vh;
-  background:url('CC91528A-789B-4124-9790-82C0DB69E60B.png') no-repeat center center/cover;
+  object-fit:contain; /* KEIN ZOOM */
 }
 
 /* NAVBAR */
@@ -57,6 +52,34 @@
 .navbar img{
   height:30px;
 }
+
+/* HERO */
+.hero{
+  height:100vh;
+  background:url('CC91528A-789B-4124-9790-82C0DB69E60B.png') no-repeat center center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding-top:70px;
+}
+
+.hero-content h1{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+.hero-content p{
+  margin-bottom:20px;
+}
+
+.btn{
+  padding:12px 30px;
+  border:1px solid gold;
+  color:white;
+  text-decoration:none;
+}
 </style>
 </head>
 
@@ -64,17 +87,23 @@
 
 <!-- INTRO -->
 <div id="intro">
-  <img src="IMG_1751.jpeg">
+  <img src="IMG_1751.jpeg" alt="Intro">
 </div>
 
 <!-- NAVBAR -->
 <div class="navbar">
-  <img src="IMG_1751.jpeg">
-  <img src="42543725-B185-48B2-A22E-0B5BA6D9F2A3.png">
+  <img src="IMG_1751.jpeg" alt="Logo">
+  <img src="42543725-B185-48B2-A22E-0B5BA6D9F2A3.png" alt="Bag">
 </div>
 
 <!-- HERO -->
-<div class="hero"></div>
+<div class="hero">
+  <div class="hero-content">
+    <h1>Pure Eleganz.</h1>
+    <p>Ein Duft. Ein Statement.</p>
+    <a href="#" class="btn">JETZT ENTDECKEN</a>
+  </div>
+</div>
 
 <script>
 setTimeout(()=>{
