@@ -1,131 +1,116 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xerol Switzerland</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<title>Xerol Switzerland</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-    body {
-      background: black;
-      color: white;
-      font-family: 'Inter', sans-serif;
-    }
+<style>
 
-    /* HERO */
-    .hero {
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1600185365483-26d7a4cc7519') no-repeat center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* Dark overlay */
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-    }
+body {
+  background: black;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-      padding: 20px;
-    }
+/* 🔥 INTRO LOGO */
+.intro {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 40px;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-    }
+.logo-box {
+  padding: 60px;
+  box-shadow: 0 0 60px rgba(255,255,255,0.3);
+  animation: glow 2s ease-in-out infinite alternate;
+}
 
-    .headline {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
+.logo-box img {
+  width: 200px;
+}
 
-    .subtext {
-      font-size: 16px;
-      color: #ccc;
-      margin-bottom: 40px;
-    }
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  }
+  to {
+    box-shadow: 0 0 80px rgba(255,255,255,0.6);
+  }
+}
 
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      border: 1px solid #C5A46D;
-      color: #C5A46D;
-      text-decoration: none;
-      letter-spacing: 2px;
-      font-size: 13px;
-      text-transform: uppercase;
-      transition: 0.3s;
-    }
+/* 🔥 HERO (Gisada Style) */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539') no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
 
-    .btn:hover {
-      background: #C5A46D;
-      color: black;
-    }
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
 
-    /* SECTION */
-    .section {
-      padding: 100px 20px;
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-    }
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+}
 
-    .section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
+.headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
 
-    .section p {
-      color: #aaa;
-      line-height: 1.6;
-    }
+.subtext {
+  color: #ccc;
+  margin-bottom: 40px;
+}
 
-  </style>
-</head>
-<body>
+/* BUTTON */
+.btn {
+  border: 1px solid #C5A46D;
+  color: #C5A46D;
+  padding: 12px 28px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="logo">XEROL</div>
-      <div class="headline">Ein Statement.</div>
-      <div class="subtext">
-        Schweizer Präzision trifft auf pure Eleganz.
-      </div>
-      <a href="#" class="btn">Jetzt entdecken</a>
-    </div>
-  </section>
+.btn:hover {
+  background: #C5A46D;
+  color: black;
+}
 
-  <!-- SECTION -->
-  <section class="section">
-    <h2>Luxury Redefined</h2>
-    <p>
-      Xerol steht für exklusive Düfte, die nicht nur getragen,
-      sondern erlebt werden. Minimalistisch. Kraftvoll. Zeitlos.
-    </p>
-  </section>
+/* SECTION */
+.section {
+  padding: 120px 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
 
-</body>
-</html>
+.section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+ 
