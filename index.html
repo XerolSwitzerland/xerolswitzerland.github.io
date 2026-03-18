@@ -10,17 +10,15 @@
 
 <style>
 
-/* RESET + FIX */
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 /* BODY */
@@ -30,28 +28,29 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* INTRO */
+/* 🔥 INTRO (LOGO FULLSCREEN) */
 #intro {
   position: fixed;
   inset: 0;
   background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 9999;
-  transition: opacity 0.6s ease;
+  overflow: hidden;
 }
 
 .intro-logo {
-  width: 180px;
-  animation: fadeIn 1.5s ease;
-  box-shadow: 0 0 80px rgba(255,255,255,0.25);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
-  background: url("CC91528A-789B-4124-9790-82C0DB69E60B.png") center / cover no-repeat;
+  background-image: url("CC91528A-789B-4124-9790-82C0DB69E60B.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,15 +59,13 @@ body {
   position: relative;
 }
 
-/* OVERLAY (luxury effect) */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+  background: rgba(0,0,0,0.5);
 }
 
-/* CONTENT */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -82,7 +79,7 @@ body {
 
 .subtext {
   color: #ccc;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .btn {
@@ -99,20 +96,18 @@ body {
   color: black;
 }
 
-/* NEXT SECTION */
+/* NEXT */
 .next {
   height: 100vh;
-  background: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
 }
 
 /* ANIMATION */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.8s ease;
 }
 
 </style>
@@ -120,12 +115,12 @@ body {
 
 <body>
 
-<!-- INTRO -->
+<!-- 🔥 INTRO -->
 <div id="intro">
   <img src="CC91528A-789B-4124-9790-82C0DB69E60B.png" class="intro-logo">
 </div>
 
-<!-- HERO -->
+<!-- 🔥 HERO -->
 <section class="hero">
   <div class="hero-content">
     <div class="headline">Pure Eleganz.</div>
@@ -134,20 +129,19 @@ body {
   </div>
 </section>
 
-<!-- NEXT -->
+<!-- 🔥 NEXT -->
 <section id="next" class="next">
   Willkommen bei Xerol Switzerland ✨
 </section>
 
-<!-- SCRIPT -->
 <script>
 setTimeout(() => {
   const intro = document.getElementById("intro");
-  intro.style.opacity = "0";
+  intro.classList.add("fade-out");
 
   setTimeout(() => {
     intro.style.display = "none";
-  }, 600);
+  }, 800);
 }, 2500);
 </script>
 
