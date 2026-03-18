@@ -4,83 +4,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xerol</title>
+<title>Xerol Switzerland</title>
 
 <style>
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: black;
+    margin: 0;
+    background: black;
+    font-family: Arial, sans-serif;
 }
 
 /* HEADER */
 .header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  background: #e9e9e9;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-.header-left,
-.header-right {
-  display: flex;
-  align-items: center;
+/* LINKES LOGO */
+.logo-left {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    transform: translateY(0); /* gerade */
+    filter: brightness(0); /* schwarz machen */
 }
 
-/* ICONS GLEICH */
-.header-left img,
-.header-right img {
-  height: 30px;
-  width: 30px;
-  object-fit: contain;
+/* RECHTE TASCHE */
+.bag-right {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    transform: translateY(0); /* gleiche Höhe */
+    filter: brightness(0); /* gleiche Farbe wie links */
 }
 
 /* HERO */
 .hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: black;
+    margin-top: 80px;
+    height: 100vh;
+    background: url('DEIN-PARFUM-BILD.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* LOGO FIX */
-.hero-logo img {
-  width: 300px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  object-fit: contain;
+/* GROSSES LOGO */
+.main-logo {
+    width: 300px;
+    max-width: 80%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    transform: translateY(0); /* gerade */
 }
 </style>
-
 </head>
 
 <body>
 
 <!-- HEADER -->
 <div class="header">
-  <div class="header-left">
-    <img src="IMG_1843.jpeg" alt="logo">
-  </div>
-
-  <div class="header-right">
-    <img src="42543725-B185-48B2-A22E-0B5BA6D9F2A3.png" alt="bag">
-  </div>
+    <img src="IMG_1843.jpeg" class="logo-left">
+    <img src="42543725-B185-48B2-A22E-0B5BA6D9F2A3.png" class="bag-right">
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-logo">
-    <img src="IMG_1751.jpeg" alt="xerol logo">
-  </div>
-</section>
+<div class="hero">
+    <img src="14A25A66-8A51-49FD-A812-AB9F9BE3DAC3.png" class="main-logo">
+</div>
 
 </body>
 </html>
