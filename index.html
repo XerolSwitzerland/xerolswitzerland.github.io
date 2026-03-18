@@ -28,32 +28,22 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* 🔥 INTRO */
+/* 🔥 INTRO (PERFEKT BALANCE) */
 #intro {
   position: fixed;
   inset: 0;
-  background: black;
   z-index: 9999;
-  overflow: hidden;
-}
 
-/* 💥 FIXED LOGO (ZOOM) */
-.intro-logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(2.2);
-  height: 100%;
-  width: auto;
+  background: url("IMG_1751.jpeg") center center no-repeat;
+  background-size: 70%; /* 🔥 NICHT ZU ZOOMED */
+  background-color: black;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
-  background-image: url("IMG_1817.jpeg");
+  background: url("IMG_1817.jpeg") center center no-repeat;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 
   display: flex;
   justify-content: center;
@@ -120,34 +110,9 @@ body {
 <body>
 
 <!-- 🔥 INTRO -->
-<div id="intro">
-  <img src="IMG_1751.jpeg" class="intro-logo">
-</div>
+<div id="intro"></div>
 
 <!-- 🔥 HERO -->
 <section class="hero">
   <div class="hero-content">
-    <div class="headline">Pure Eleganz.</div>
-    <div class="subtext">Ein Duft. Ein Statement.</div>
-    <a href="#next" class="btn">JETZT ENTDECKEN</a>
-  </div>
-</section>
-
-<!-- 🔥 NEXT -->
-<section id="next" class="next">
-  Willkommen bei Xerol Switzerland ✨
-</section>
-
-<script>
-setTimeout(() => {
-  const intro = document.getElementById("intro");
-  intro.classList.add("fade-out");
-
-  setTimeout(() => {
-    intro.style.display = "none";
-  }, 800);
-}, 2500);
-</script>
-
-</body>
-</html>
+    <div class="headline">Pure Eleganz
