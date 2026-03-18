@@ -20,21 +20,24 @@ body {
   background: black;
   color: white;
   font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
 }
 
-/* 🔥 INTRO LOGO */
-.intro {
-  height: 100vh;
+/* 🔥 INTRO SCREEN */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: black;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
 }
 
 .logo-box {
   padding: 60px;
   box-shadow: 0 0 60px rgba(255,255,255,0.3);
-  animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s infinite alternate;
 }
 
 .logo-box img {
@@ -42,15 +45,11 @@ body {
 }
 
 @keyframes glow {
-  from {
-    box-shadow: 0 0 20px rgba(255,255,255,0.2);
-  }
-  to {
-    box-shadow: 0 0 80px rgba(255,255,255,0.6);
-  }
+  from { box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+  to { box-shadow: 0 0 80px rgba(255,255,255,0.6); }
 }
 
-/* 🔥 HERO (Gisada Style) */
+/* 🔥 HERO */
 .hero {
   height: 100vh;
   background: url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539') no-repeat center/cover;
@@ -71,8 +70,6 @@ body {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 700px;
-  padding: 20px;
 }
 
 .headline {
@@ -102,15 +99,39 @@ body {
   color: black;
 }
 
-/* SECTION */
-.section {
-  padding: 120px 20px;
-  text-align: center;
-  max-width: 900px;
-  margin: auto;
-}
+</style>
+</head>
 
-.section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
- 
+<body>
+
+<!-- 🔥 INTRO -->
+<div id="intro">
+  <div class="logo-box">
+    <img src="https://i.imgur.com/yourlogo.png" alt="logo">
+  </div>
+</div>
+
+<!-- 🔥 WEBSITE -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="headline">Pure Eleganz.</div>
+    <div class="subtext">Ein Duft. Ein Statement.</div>
+    <a href="#" class="btn">Jetzt entdecken</a>
+  </div>
+</section>
+
+<script>
+  // 🔥 Intro verschwindet nach 2.5 Sekunden
+  setTimeout(() => {
+    const intro = document.getElementById("intro");
+    intro.style.opacity = "0";
+
+    setTimeout(() => {
+      intro.style.display = "none";
+    }, 1000);
+
+  }, 2500);
+</script>
+
+</body>
+</html>
