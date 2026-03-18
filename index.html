@@ -11,31 +11,31 @@ body {
     margin: 0;
     background: black;
     font-family: Arial, sans-serif;
-    color: white;
 }
 
 /* TOPBAR */
 .topbar {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     height: 70px;
-    background: white;
+    background: #f2f2f2;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    z-index: 99999;
+    z-index: 10000;
 }
 
-.topbar img {
-    height: 30px;
+/* LOGO LINKS (JETZT GERADE) */
+.top-logo {
+    height: 35px;
+    transform: none; /* FIX: entfernt schief */
 }
 
-/* 🔥 Tasche weiter nach links */
-.topbar img:last-child {
-    margin-right: 30px;
+/* TASCHE RECHTS */
+.bag img {
+    width: 30px;
 }
 
 /* INTRO */
@@ -52,44 +52,40 @@ body {
 }
 
 #intro img {
-    width: 260px;
-    animation: glow 2s infinite alternate;
+    width: 220px;
+    filter: drop-shadow(0 0 25px white);
 }
 
 /* HERO */
 .hero {
     height: 100vh;
-    background: url("CC91528A-789B-4124-9790-82C0DB69E60B.png") center/cover no-repeat;
+    background: url('CC91528A-789B-4124-9790-82C0DB69E60B.png') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     padding-top: 70px;
+    text-align: center;
 }
 
 .hero h1 {
     font-size: 40px;
-    margin: 0;
-}
-
-.hero p {
-    margin: 10px 0 20px;
-}
-
-.btn {
-    padding: 12px 30px;
-    border: 1px solid gold;
-    background: transparent;
     color: white;
 }
 
-/* ANIMATION */
-@keyframes glow {
-    from { filter: drop-shadow(0 0 5px white); }
-    to { filter: drop-shadow(0 0 20px white); }
+.hero p {
+    color: white;
 }
 
+.btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: 1px solid gold;
+    color: white;
+    background: transparent;
+}
+
+/* ANIMATION */
 @keyframes fadeOut {
     to { opacity: 0; visibility: hidden; }
 }
@@ -98,18 +94,17 @@ body {
 
 <body>
 
-<!-- TOPBAR -->
 <div class="topbar">
-    <img src="IMG_1843.jpeg">
-    <img src="42543725-B185-48B2-A22E-0B5BA6D9F2A3.png">
+    <img src="IMG_1843.jpeg" class="top-logo">
+    <div class="bag">
+        <img src="42543725-B185-48B2-A22E-0B5BA6D9F2A3.png">
+    </div>
 </div>
 
-<!-- INTRO -->
 <div id="intro">
     <img src="IMG_1751.jpeg">
 </div>
 
-<!-- HERO -->
 <div class="hero">
     <h1>Pure Eleganz.</h1>
     <p>Ein Duft. Ein Statement.</p>
