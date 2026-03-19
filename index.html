@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -50,12 +51,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    animation: fadeOut 2s ease 2s forwards;
-}
-
-#intro img {
-    width: 260px;
-    animation: glow 2s infinite alternate;
+    animation: fadeOut 1.5s ease 2s forwards;
 }
 
 /* HERO */
@@ -72,17 +68,6 @@ body {
 
 .hero h1 {
     font-size: 40px;
-    margin: 0;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 1s ease forwards;
-}
-
-.hero p {
-    margin: 10px 0 20px;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 1s ease 0.3s forwards;
 }
 
 .btn {
@@ -91,45 +76,33 @@ body {
     background: transparent;
     color: white;
     cursor: pointer;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 1s ease 0.6s forwards;
 }
 
 /* NEXT SECTION */
-.next-section {
-    height: 100vh;
+.next {
+    height: 120vh; /* wichtig damit scroll geht */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 /* SCROLL ANIMATION */
-.scroll-item {
+.fade {
     opacity: 0;
     transform: translateY(50px);
-    transition: 0.8s;
+    transition: 1s;
 }
 
-.scroll-item.show {
+.fade.show {
     opacity: 1;
     transform: translateY(0);
 }
 
 /* ANIMATION */
-@keyframes glow {
-    from { filter: drop-shadow(0 0 5px white); }
-    to { filter: drop-shadow(0 0 20px white); }
-}
-
 @keyframes fadeOut {
-    to { opacity: 0; visibility: hidden; }
-}
-
-@keyframes fadeUp {
     to {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 0;
+        visibility: hidden;
     }
 }
 </style>
@@ -145,34 +118,39 @@ body {
 
 <!-- INTRO -->
 <div id="intro">
-    <img src="14A25A66-8A51-49FD-A812-AB9F9BE3DAC3.png">
+    <img src="14A25A66-8A51-49FD-A812-AB9F9BE3DAC3.png" width="200">
 </div>
 
 <!-- HERO -->
 <div class="hero">
     <h1>Pure Eleganz.</h1>
     <p>Ein Duft. Ein Statement.</p>
-    <a href="#next" class="btn">JETZT ENTDECKEN</a>
+    <button class="btn" onclick="scrollDown()">JETZT ENTDECKEN</button>
 </div>
 
-<!-- NEXT SECTION -->
-<div id="next" class="next-section">
-    <h2 class="scroll-item">Unsere Produkte</h2>
+<!-- NEXT -->
+<div class="next">
+    <h2 class="fade">Unsere Produkte</h2>
 </div>
 
 <script>
+function scrollDown() {
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+    });
+}
+
 // SCROLL ANIMATION
-const items = document.querySelectorAll('.scroll-item');
+const fade = document.querySelector('.fade');
 
 window.addEventListener('scroll', () => {
-    items.forEach(item => {
-        const itemTop = item.getBoundingClientRect().top;
-        const trigger = window.innerHeight - 100;
+    let pos = fade.getBoundingClientRect().top;
+    let screen = window.innerHeight;
 
-        if(itemTop < trigger){
-            item.classList.add('show');
-        }
-    });
+    if (pos < screen - 100) {
+        fade.classList.add('show');
+    }
 });
 </script>
 
