@@ -80,10 +80,22 @@ body {
 
 /* NEXT SECTION */
 .next {
-    height: 120vh; /* wichtig damit scroll geht */
+    height: 120vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+/* TEXT STYLE */
+.next h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.next p {
+    font-size: 16px;
+    color: #ccc;
 }
 
 /* SCROLL ANIMATION */
@@ -130,7 +142,10 @@ body {
 
 <!-- NEXT -->
 <div class="next">
-    <h2 class="fade">Unsere Produkte</h2>
+    <div class="fade">
+        <h2>Wir kreieren etwas Einzigartiges</h2>
+        <p>bald erhältlich</p>
+    </div>
 </div>
 
 <script>
