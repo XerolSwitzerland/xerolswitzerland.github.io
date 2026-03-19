@@ -6,6 +6,10 @@
 <title>Xerol Swiss</title>
 
 <style>
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background: black;
@@ -27,14 +31,13 @@ body {
     z-index: 10000;
 }
 
-/* LOGOS */
 .logo-left {
     height: 30px;
 }
 
 .bag {
     height: 30px;
-    transform: translateX(-35px); /* 🔥 HIER nach links */
+    transform: translateX(-25px);
 }
 
 /* INTRO */
@@ -70,10 +73,16 @@ body {
 .hero h1 {
     font-size: 40px;
     margin: 0;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
 }
 
 .hero p {
     margin: 10px 0 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease 0.3s forwards;
 }
 
 .btn {
@@ -81,6 +90,30 @@ body {
     border: 1px solid gold;
     background: transparent;
     color: white;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease 0.6s forwards;
+}
+
+/* NEXT SECTION */
+.next-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SCROLL ANIMATION */
+.scroll-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.8s;
+}
+
+.scroll-item.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ANIMATION */
@@ -91,6 +124,13 @@ body {
 
 @keyframes fadeOut {
     to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 </style>
 </head>
@@ -112,8 +152,29 @@ body {
 <div class="hero">
     <h1>Pure Eleganz.</h1>
     <p>Ein Duft. Ein Statement.</p>
-    <button class="btn">JETZT ENTDECKEN</button>
+    <a href="#next" class="btn">JETZT ENTDECKEN</a>
 </div>
+
+<!-- NEXT SECTION -->
+<div id="next" class="next-section">
+    <h2 class="scroll-item">Unsere Produkte</h2>
+</div>
+
+<script>
+// SCROLL ANIMATION
+const items = document.querySelectorAll('.scroll-item');
+
+window.addEventListener('scroll', () => {
+    items.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        const trigger = window.innerHeight - 100;
+
+        if(itemTop < trigger){
+            item.classList.add('show');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
