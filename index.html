@@ -27,8 +27,14 @@ body {
     z-index: 10000;
 }
 
-.topbar img {
+/* LOGOS */
+.logo-left {
     height: 30px;
+}
+
+.bag {
+    height: 30px;
+    transform: translateX(-15px); /* 🔥 HIER nach links */
 }
 
 /* INTRO */
@@ -49,7 +55,7 @@ body {
     animation: glow 2s infinite alternate;
 }
 
-/* HERO (PARFUM) */
+/* HERO */
 .hero {
     height: 100vh;
     background: url("CC91528A-789B-4124-9790-82C0DB69E60B.png") center/cover no-repeat;
@@ -93,8 +99,8 @@ body {
 
 <!-- TOP BAR -->
 <div class="topbar">
-    <img src="IMG_1843.jpeg">
-    <img src="42543725-B185-48B2-A22E-0B5BA6D9F2A3.png">
+    <img src="IMG_1843.jpeg" class="logo-left">
+    <img src="42543725-B185-48B2-A22E-0B5BA6D9F2A3.png" class="bag">
 </div>
 
 <!-- INTRO -->
