@@ -1,66 +1,113 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xerol</title>
+<title>Xerol Swiss</title>
 
 <style>
 body {
     margin: 0;
     background: black;
     font-family: Arial, sans-serif;
+    color: white;
 }
 
-/* HEADER */
-.header {
+/* TOP BAR */
+.topbar {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 80px;
-    background: #e9e9e9;
+    height: 70px;
+    background: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    z-index: 10000;
 }
 
-/* LOGOS */
-.header img {
-    height: 35px;
-    object-fit: contain;
+.topbar img {
+    height: 30px;
 }
 
-/* HERO */
-.hero {
-    margin-top: 80px;
-    height: 100vh;
-    background: url("14A25A66-8A51-49FD-A812-AB9F9BE3DAC3.png") center/contain no-repeat;
-    background-color: black;
-}
-
-/* DAMIT ES NICHT HÄNGEN BLEIBT */
-.content {
+/* INTRO */
+#intro {
+    position: fixed;
+    width: 100%;
     height: 100vh;
     background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 2s ease 2s forwards;
+}
+
+#intro img {
+    width: 260px;
+    animation: glow 2s infinite alternate;
+}
+
+/* HERO (PARFUM) */
+.hero {
+    height: 100vh;
+    background: url("CC91528A-789B-4124-9790-82C0DB69E60B.png") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.hero p {
+    margin: 10px 0 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: 1px solid gold;
+    background: transparent;
+    color: white;
+}
+
+/* ANIMATION */
+@keyframes glow {
+    from { filter: drop-shadow(0 0 5px white); }
+    to { filter: drop-shadow(0 0 20px white); }
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
+<!-- TOP BAR -->
+<div class="topbar">
     <img src="IMG_1843.jpeg">
     <img src="42543725-B185-48B2-A22E-0B5BA6D9F2A3.png">
 </div>
 
-<!-- HERO -->
-<div class="hero"></div>
+<!-- INTRO -->
+<div id="intro">
+    <img src="IMG_1751.jpeg">
+</div>
 
-<!-- EXTRA CONTENT (wichtig!) -->
-<div class="content"></div>
+<!-- HERO -->
+<div class="hero">
+    <h1>Pure Eleganz.</h1>
+    <p>Ein Duft. Ein Statement.</p>
+    <button class="btn">JETZT ENTDECKEN</button>
+</div>
 
 </body>
 </html>
