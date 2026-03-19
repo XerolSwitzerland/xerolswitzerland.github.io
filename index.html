@@ -6,9 +6,38 @@
 <title>Xerol Swiss</title>
 
 <style>
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background: black;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* TOP BAR */
+.topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 10000;
+}
+
+.logo-left {
+    height: 30px;
+}
+
+.bag {
+    height: 30px;
+    transform: translateX(-20px);
 }
 
 /* INTRO */
@@ -26,34 +55,129 @@ body {
     align-items: center;
 
     z-index: 9999;
-
-    animation: fadeOut 1.5s ease 2s forwards;
 }
 
-/* DAS IST DER KEY */
 #intro img {
     width: 90%;
     max-width: 400px;
     height: auto;
-    display: block;
 }
 
-/* FADE */
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
+/* Intro verschwindet */
+.hide-intro {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 1s;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url("CC91528A-789B-4124-9790-82C0DB69E60B.png") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.hero p {
+    margin: 10px 0 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: 1px solid gold;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+/* NEXT SECTION */
+.next {
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.fade {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 </style>
 </head>
 
 <body>
 
+<!-- TOP BAR -->
+<div class="topbar">
+    <img src="IMG_1843.jpeg" class="logo-left">
+    <img src="42543725-B185-48B2-A22E-0B5BA6D9F2A3.png" class="bag">
+</div>
+
 <!-- INTRO -->
 <div id="intro">
     <img src="14A25A66-8A51-49FD-A812-AB9F9BE3DAC3.png">
 </div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Pure Eleganz.</h1>
+    <p>Ein Duft. Ein Statement.</p>
+    <button class="btn" onclick="scrollDown()">JETZT ENTDECKEN</button>
+</div>
+
+<!-- NEXT -->
+<div class="next">
+    <div class="fade">
+        <h2>Wir kreieren etwas Einzigartiges</h2>
+        <p>bald erhältlich</p>
+    </div>
+</div>
+
+<script>
+/* INTRO FIX */
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.getElementById("intro").classList.add("hide-intro");
+    }, 2000);
+});
+
+/* SCROLL BUTTON */
+function scrollDown() {
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+    });
+}
+
+/* SCROLL ANIMATION */
+const fade = document.querySelector('.fade');
+
+window.addEventListener('scroll', () => {
+    let pos = fade.getBoundingClientRect().top;
+    let screen = window.innerHeight;
+
+    if (pos < screen - 100) {
+        fade.classList.add('show');
+    }
+});
+</script>
 
 </body>
 </html>
